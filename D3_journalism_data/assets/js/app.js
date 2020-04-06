@@ -19,7 +19,7 @@ d3.csv('assets/data/data.csv').then(data => {
     var svg = d3.select('#scatter').append('svg');
 
     svg
-        .style('background','blue')
+        .style('background','white')
         .style('width',width)
         .style('height',height)
         .attr('class','chart')
@@ -104,11 +104,98 @@ d3.csv('assets/data/data.csv').then(data => {
             .classed('active', false)
             .classed('inactive',true)
 
-        // clickedText
-        //     .classed()
-    }
+        clickedText
+            .classed('inactive',false)
+            .classed('active',true);
+    };
+
+    var xScale = d3
+        .scaleLinear()
+        .domain([xMin,xMax])
+        .range([margin + labelArea, width - margin]);
     
+    var yScale = d3
+        .scaleLinear()
+        .domain([yMin,yMax])
+        .range([height - margin - labelArea, margin]);
+
+    var xAxis = d3.axisBottom(xScale);
+    var yAxis = d3.axisLeft(yScale);
     
+    function tickCount() {
+        if (width <= 500) {
+            xAxis.ticks(5);
+            yAxis.ticks(5);
+        } else {
+            xAxis.ticks(10);
+            yAxis.ticks(10);
+        };
+    };
+
+    tickCount();
+
+    svg
+        .append('g')
+        .call(xAxis)
+        .attr('class','xAxis')
+        .attr('transform', `translate(0,${(height-margin-labelArea)})`);
+    
+    svg
+        .append('g')
+        .call(yAxis)
+        .attr('class','yAxis')
+        .attr('transform', `translate(${(margin + labelArea)},0)`);
+    
+    var theCircles = svg
+        .selectAll('g theCircles')
+        .data(data)
+        .enter();
+    
+    var circRadius;
+
+    function crGet() {
+        if (width<=530) {
+            circRadius=7;
+        } else {
+            circRadius=14;
+        };
+    };
+
+    crGet();
+
+    var toolTip = d3
+    .tip()
+    .attr('class','d3-tip')
+    .html(d=>{
+        var TheX;
+        var theState = `<div>${d.state}</div>`;
+        var theY = `<div>${curY}: ${d[curY]} %</div>`;
+        if (curX === 'poverty') {
+            theX = `<div>${curX}: ${parseFloat(d[curX]).toLocaleString('en')}</div>`;
+        }
+        return theState + theX + theY;
+    });
+svg.call(toolTip);
+
+    theCircles
+        .append('circle')
+        .attr('cx',d=>xScale(d[curX]))
+        .attr('cy',d=>yScale(d[curY]))
+        .attr('r',circRadius)
+        .attr('class',d=>`stateCircle ${d.abbr}`)
+        .on('mouseover',function (d) {
+            toolTip.show(d,this);
+            d3.select(this).style('stroke','#323232')
+        });
+    
+    theCircles
+        .append('text')
+        .text(d=>d.abbr)
+        .attr('dx',d=>xScale(d[curX]))
+        .attr('dy',d=>yScale(d[curY]) + circRadius / 2.5)
+        .attr('font-size',circRadius)
+        .attr('class','stateText')
+
     
 
 });
