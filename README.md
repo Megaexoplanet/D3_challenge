@@ -1,4 +1,4 @@
-Correlations between health risks, age, and income
+CORRELATIONS BETWEEN HEALTH RISKS, AGE, AND INCOME
 
 Introduction:
 
