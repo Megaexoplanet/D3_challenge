@@ -13,7 +13,7 @@ The data source was downloaded as a CSV off of the US Census bureau's Factfinder
 
 Technologies:
 
-Javascript, CSS, Javascipt library (D3), and HTML were used.
+Javascript, CSS, Javascipt library (D3), Tooltip and HTML were used.
 
 Scope:
 
