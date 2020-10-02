@@ -9,7 +9,7 @@ that can display various health risks within each individual state.
 
 Data source:
 
-The data source was downloaded as a CSV off of the US Census bureau's Factfinder website.
+The data source was downloaded as a CSV off of the US Census Bureau's Factfinder website.
 
 Technologies:
 
@@ -17,4 +17,4 @@ Javascript, CSS, Javascipt library (D3), Tooltip and HTML were used.
 
 Scope:
 
-The data source was based on the 2014 ACS 1 year estimates. The current data set includes data on rates of income, obesity, poverty, etc. by state. MOE stands for "margin of error." This data was used to create a dynamic graph with obesity, smokers, and lack of healthcare on the Y-axis. Poverty, age, and household income was graphed on the x-axis, respectively. The created graph gave us the functionality of clicking on which Y-axis or X-axis variables that we wanted to compare. When the X-axis and Y-axis variables are selected than the graph displays each state. This shows where each state measures for the given two variables. 
+The data source was based on the 2014 ACS 1 year estimates. The current data set includes data on rates of income, obesity, poverty, etc. by state. MOE stands for "margin of error." This data was used to create a dynamic graph with obesity, smokers, and lack of healthcare on the Y-axis. Poverty, age, and household income was graphed on the x-axis, respectively. The created graph gave us the functionality of clicking on which Y-axis or X-axis variables that we wanted to compare. When the X-axis and Y-axis variables are selected than the graph displays each state. This shows where each state measures for the given two variables. Also, it has the functionality of when a state is selected toolpit diplays the exact value for both given variables for each state.
