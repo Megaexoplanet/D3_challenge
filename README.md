@@ -17,7 +17,6 @@ Scope:
 
 The data source was based on the 2014 ACS 1 year estimates. The current data set includes data on rates of income, obesity, poverty, etc. by state. MOE stands for "margin of error." This data was used to create a dynamic graph with obesity, smokers, and lack of healthcare on the Y-axis. Poverty, age, and household income was graphed on the x-axis, respectively.
 
-![Newsroom](https://media.giphy.com/media/v2xIous7mnEYg/giphy.gif)
 
 ![Heart](https://media.giphy.com/media/s0cgIlfRm5dF6/giphy.gif)
 
