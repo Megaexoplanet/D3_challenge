@@ -19,3 +19,5 @@ The data source was based on the 2014 ACS 1 year estimates. The current data set
 
 ![Newsroom](https://media.giphy.com/media/v2xIous7mnEYg/giphy.gif)
 
+![Heart](https://giphy.com/gifs/health-s0cgIlfRm5dF6)
+
